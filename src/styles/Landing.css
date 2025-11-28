@@ -1,0 +1,32 @@
+/* .init-dashboard {
+    height: 85vh;
+    position: relative;
+} */
+
+.header {
+  /* top: 0;
+  right: 0;
+  left: 0;
+  position: fixed; */
+  z-index: 10;
+  height: 80px;
+  background-color: var(--bgColor-default);
+}
+
+.dashboard {
+  /* top: 80px;
+  right: 0;
+  left: 0;
+  position: relative; */
+  /* height: calc(100vh - 80px); */
+  background-color: var(--bgColor-default);
+}
+
+.footer {
+  /* bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed; */
+  height: 50px;
+  background-color: var(--bgColor-default);
+}

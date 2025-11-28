@@ -1,0 +1,33 @@
+{
+  "name": "rk_wikisongs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/App.jsx",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack watch --stats errors-only",
+    "dev": "webpack serve --stats errors-only"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.4",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "@primer/octicons-react": "^19.21.0",
+    "@primer/primitives": "^11.3.0",
+    "@primer/react": "^38.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
