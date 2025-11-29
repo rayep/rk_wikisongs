@@ -16,7 +16,7 @@ export function getComposerAlbums(root) {
   return $albums
     .map(function () {
       let $a = $(this);
-      let albumName = $a.attr("title").replace(" ", "_");
+      let albumName = $a.attr("title").replaceAll(" ", "_");
       let isLinkValid = !$a.hasClass("new");
       return { albumName, isLinkValid };
     })
