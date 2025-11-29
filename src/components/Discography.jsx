@@ -15,14 +15,14 @@ function Composer({ name, avatar, yearsActive }) {
           {name}
         </Heading>
         <Text>{yearsActive}</Text>
-        <WikiLinkButton value={name}/>
+        <WikiLinkButton value={name} />
       </Stack>
     </Stack>
   );
 }
 
 export function Discography({ url }) {
-  const { albums, setAlbums, composerMetadata, setComposerMetadata } = useContext(DiscographyContext);
+  const { albums, setAlbums, composerMetadata, setComposerMetadata, searchAlbums } = useContext(DiscographyContext);
   const { appLoadType } = useContext(DashboardContext);
 
   appLoadType === "create" &&
@@ -35,6 +35,8 @@ export function Discography({ url }) {
       []
     );
 
+  const loadAlbums = searchAlbums.length ? searchAlbums : albums;
+
   return (
     <>
       <Composer
@@ -43,7 +45,7 @@ export function Discography({ url }) {
         yearsActive={composerMetadata.yearsActive}
       />
       <Stack padding={"spacious"} align={"center"} direction={"horizontal"} wrap={"wrap"} gap={"spacious"}>
-        {albums.map(({ albumName, isLinkValid }) => (
+        {loadAlbums.map(({ albumName, isLinkValid }) => (
           <Album key={albumName} name={albumName} isLinkValid={isLinkValid} />
         ))}
       </Stack>

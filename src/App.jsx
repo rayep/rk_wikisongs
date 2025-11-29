@@ -10,12 +10,13 @@ import { Footer } from "./components/Footer";
 import "Styles/Landing.css";
 import "@primer/primitives/dist/css/functional/themes/light.css";
 import "@primer/primitives/dist/css/functional/themes/dark.css";
-import "@primer/primitives/dist/css/base/motion/motion.css"
+import "@primer/primitives/dist/css/base/motion/motion.css";
 
 function App() {
   const [appLoadType, setAppLoadType] = useState("");
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false);
   const [albums, setAlbums] = useState([]);
+  const [searchAlbums, setSearchAlbums] = useState([]);
   const [composerMetadata, setComposerMetadata] = useState({});
   const [completedAlbums, setCompletedAlbums] = useState({});
   const [albumsMetadata, setAlbumsMetadata] = useState({});
@@ -25,7 +26,9 @@ function App() {
     <ThemeProvider colorMode={darkMode ? "dark" : "light"}>
       <BaseStyles>
         <DashboardContext value={{ appLoadType, setAppLoadType, darkMode, setDarkMode }}>
-          <DiscographyContext value={{ albums, setAlbums, composerMetadata, setComposerMetadata }}>
+          <DiscographyContext
+            value={{ albums, setAlbums, composerMetadata, setComposerMetadata, searchAlbums, setSearchAlbums }}
+          >
             <AlbumContext value={{ completedAlbums, setCompletedAlbums, albumsMetadata, setAlbumsMetadata }}>
               <SongContext value={{ songs, setSongs, likedSongs, setLikedSongs }}>
                 <PageLayout padding="none" columnGap="none" rowGap="none" containerWidth="auto">

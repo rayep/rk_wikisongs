@@ -3,7 +3,7 @@ import { Button, Stack } from "@primer/react";
 import { FormControl, TextInput, Dialog } from "@primer/react";
 import { Blankslate } from "@primer/react/experimental";
 import { createContext, useContext, useState } from "react";
-import { Discography } from "./Discography";
+import { Discography, DiscographyContext } from "./Discography";
 import "Styles/Dashboard.css";
 
 export const DashboardContext = createContext(null);
@@ -110,7 +110,7 @@ export function Dashboard() {
 
       {!appLoadType && <CreatePage createStatus={isCreateDialogActive} toggleCreate={setCreateDialogActive} />}
 
-      {appLoadType && <Discography key={composerURL} url={composerURL} />}
+      {appLoadType && <Discography key={`${Math.random()}`} url={composerURL} />}
 
       <>
         <Button

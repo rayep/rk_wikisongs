@@ -1,9 +1,8 @@
-import { SearchIcon } from "@primer/octicons-react";
-import { Heading, Stack, TextInput } from "@primer/react";
-import { useEffect } from "react";
+import { Heading, Stack } from "@primer/react";
 import { initLSContainer } from "../utils/localStorage";
-import "Styles/Header.css";
 import { ActionButtons } from "./ActionButtons";
+import { Search } from "./Search";
+import "Styles/Header.css";
 
 export function Header() {
   initLSContainer("saved", []);
@@ -16,11 +15,7 @@ export function Header() {
           <Heading as="h2">WikiSongs</Heading>
         </Stack.Item>
         <Stack.Item grow>
-          <TextInput
-            trailingAction={<TextInput.Action aria-label="Search" icon={SearchIcon} as="button" />}
-            placeholder="Search"
-            block="true"
-          />
+          <Search />
         </Stack.Item>
         <Stack.Item>
           <Stack direction={"horizontal"}>
