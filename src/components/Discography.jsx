@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect } from "react";
 import { getComposerAlbums, getComposerMetadata } from "../utils/discography";
 import { Album } from "./Album";
 import { DashboardContext, WikiLinkButton } from "./Dashboard";
+import { imageToUri } from "../utils/image";
 
 export const DiscographyContext = createContext(null);
 
@@ -29,9 +30,12 @@ export function Discography({ url }) {
     useEffect(
       () =>
         $.get(url, (data) => {
-          let composerMetadata = getComposerMetadata($(data))
-          composerMetadata.wikiLink = url.split('/').at(-2)
-          setComposerMetadata(composerMetadata);
+          let composerMetadata = getComposerMetadata($(data));
+          composerMetadata.wikiLink = url.split("/").at(-2);
+          imageToUri(composerMetadata.composerPic, (imgURI)=>{
+            composerMetadata.composerPic = imgURI
+            setComposerMetadata(composerMetadata);
+          })
           setAlbums(getComposerAlbums($(data)));
         }),
       []
@@ -42,7 +46,7 @@ export function Discography({ url }) {
   let renderKey = appLoadType === "create" ? url + searchAlbums?.length : searchAlbums?.length;
 
   return (
-    <div key={renderKey}>
+    <>
       <Composer
         name={composerMetadata.composerName}
         avatar={composerMetadata.composerPic}
@@ -50,6 +54,7 @@ export function Discography({ url }) {
         wikiLink={composerMetadata.wikiLink}
       />
       <div
+        key={renderKey}
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(200px, 250px))",
@@ -60,6 +65,6 @@ export function Discography({ url }) {
           <Album key={albumName} name={albumName} isLinkValid={isLinkValid} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
