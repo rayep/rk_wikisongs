@@ -29,7 +29,7 @@ export function WikiLinkButton({ value }) {
   return (
     <Stack align={"center"} justify={"center"} padding={"none"}>
       <Button
-        href={`https://en.wikipedia.org/w/rest.php/v1/page/${value}/html`}
+        href={`https://en.wikipedia.org/wiki/${value}`}
         target="_blank"
         leadingVisual={<GlobeIcon size={16} />}
         as="a"
