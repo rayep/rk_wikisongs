@@ -37,18 +37,26 @@ export function Discography({ url }) {
 
   const loadAlbums = searchAlbums.length ? searchAlbums : albums;
 
+  let renderKey = appLoadType === "create" ? url + searchAlbums?.length : searchAlbums?.length;
+
   return (
-    <>
+    <div key={renderKey}>
       <Composer
         name={composerMetadata.composerName}
         avatar={composerMetadata.composerPic}
         yearsActive={composerMetadata.yearsActive}
       />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 250px))", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 250px))",
+          justifyContent: "center",
+        }}
+      >
         {loadAlbums.map(({ albumName, isLinkValid }) => (
           <Album key={albumName} name={albumName} isLinkValid={isLinkValid} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

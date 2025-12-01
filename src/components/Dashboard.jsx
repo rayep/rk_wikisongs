@@ -3,7 +3,7 @@ import { Button, Stack } from "@primer/react";
 import { FormControl, TextInput, Dialog } from "@primer/react";
 import { Blankslate } from "@primer/react/experimental";
 import { createContext, useContext, useState } from "react";
-import { Discography, DiscographyContext } from "./Discography";
+import { Discography } from "./Discography";
 import "Styles/Dashboard.css";
 
 export const DashboardContext = createContext(null);
@@ -102,7 +102,6 @@ export function Dashboard() {
   const [isCreateDialogActive, setCreateDialogActive] = useState(false);
   const [composerURL, setComposerURL] = useState(null);
   const { appLoadType, darkMode, setDarkMode } = useContext(DashboardContext);
-  const { searchAlbums } = useContext(DiscographyContext);
 
   return (
     <div>
@@ -114,7 +113,6 @@ export function Dashboard() {
 
       {appLoadType && (
         <Discography
-          key={appLoadType === "create" ? composerURL : searchAlbums?.length} // runtime error when key is dynamic - needs review.
           url={composerURL}
         />
       )}
