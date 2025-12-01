@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { getItemLS, addItemLS, updateLSContainer, deleteItemLS } from "../utils/localStorage";
 import { DiscographyContext } from "./Discography";
 import { AlbumContext } from "./Album";

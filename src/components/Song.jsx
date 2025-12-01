@@ -1,4 +1,3 @@
-import { GlobeIcon } from "@primer/octicons-react";
 import { Dialog, Heading, Label, Stack, Text } from "@primer/react";
 import { createContext, useContext } from "react";
 import { WikiLinkButton } from "./Dashboard";

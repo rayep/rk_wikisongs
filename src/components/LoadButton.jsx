@@ -1,6 +1,6 @@
 import { ActionMenu, ConfirmationDialog } from "@primer/react";
 import { useContext, useState } from "react";
-import { deleteItemLS, getItemLS } from "../utils/localStorage";
+import { getItemLS } from "../utils/localStorage";
 import { DashboardContext } from "./Dashboard";
 import { StorageList } from "./StorageList";
 

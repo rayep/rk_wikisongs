@@ -3,7 +3,7 @@ import { TextInput } from "@primer/react";
 import { useContext, useState } from "react";
 import { DiscographyContext } from "./Discography";
 import { DashboardContext } from "./Dashboard";
-"".toL;
+
 export function Search() {
   const [search, setSearch] = useState("");
   const { appLoadType } = useContext(DashboardContext);
