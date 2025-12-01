@@ -2,7 +2,7 @@
 
 [![React](https://img.shields.io/badge/React-19.x-blue?logo=react)](https://reactjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/rayep/rk_wikisongs?style=social)](https://github.com/rayep/rk_wikisongs)
+[![GitHub stars](https://img.shields.io/github/stars/rayrklabs/wikisongs?style=social)](https://github.com/rayrklabs/wikisongs)
 
 A simple React-based app to explore a composer’s discography or filmography from Wikipedia and keep track of your favorite songs.
 
@@ -20,7 +20,7 @@ A simple React-based app to explore a composer’s discography or filmography fr
 
 ## 🚀 Live Demo
 The app is live and accessible via GitHub Pages:
-[**Click here to use WikiSongs**](https://rayep.github.io/rk_wikisongs/)
+[**Click here to use WikiSongs**](https://rayrklabs.github.io/wikisongs/)
 
 ---
 
@@ -47,8 +47,8 @@ The app is live and accessible via GitHub Pages:
 
 ## 🚀 Getting Started
 ```bash
-git clone https://github.com/rayep/rk_wikisongs.git
-cd rk_wikisongs
+git clone https://github.com/rayrklabs/wikisongs.git
+cd wikisongs
 npm install
 npm run dev
 ```
@@ -83,7 +83,7 @@ Contributions are welcome! If you’d like to help improve **WikiSongs**, here�
 
 2.  **Clone your fork**
     ```bash
-    git clone https://github.com/rayep/rk_wikisongs.git
+    git clone https://github.com/rayrklabs/wikisongs.git
     cd wikisongs
     ```
 
